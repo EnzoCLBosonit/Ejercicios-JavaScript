@@ -15,10 +15,6 @@ console.log(result); // 123MB
 const result = fromBytesToFormattedSizeUnits(-12145489451.5932, 5);
 console.log(result); // -12.145GB
  */
-const b=(-12145489451.5932)
-const a = b.toString().length
-console.log(a);
-
 const fromBytesToFormattedSizeUnits = (number,decimals=3) => {
     if ((Math.floor(number).toString().length)<4){
         return number.toPrecision(decimals)+' B'
@@ -34,5 +30,5 @@ const fromBytesToFormattedSizeUnits = (number,decimals=3) => {
     } 
 }
 
-console.log(fromBytesToFormattedSizeUnits(1000));
+console.log(fromBytesToFormattedSizeUnits(-12145489451.5932, 5));
 
