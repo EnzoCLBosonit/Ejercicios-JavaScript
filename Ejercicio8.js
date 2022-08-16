@@ -19,23 +19,24 @@ const fromBytesToFormattedSizeUnits = (number,decimals=3) => {
     if ((Math.floor(number).toString().length)<4){
         return number.toPrecision(decimals)+' B'
     } else if (Math.floor(number).toString().length<7){
-        return (number/1000).toPrecision(decimals)+' KB'
+        return (number/1e3).toPrecision(decimals)+' KB'
     } else if (Math.floor(number).toString().length<10){
-        return (number/1000000).toPrecision(decimals)+'MB'
+        return (number/1e6).toPrecision(decimals)+'MB'
     } else if (Math.floor(number).toString().length<13){
-        return (number/1000000000).toPrecision(decimals)+' GB'
+        return (number/1e9).toPrecision(decimals)+' GB'
     } else if (Math.floor(number).toString().length<16){
-        return (number/1000000000000).toPrecision(decimals)+' TB'
+        return (number/1e12).toPrecision(decimals)+' TB'
     } else if (Math.floor(number).toString().length<19){
-        return (number/1000000000000000).toPrecision(decimals)+' PB'
+        return (number/1e15).toPrecision(decimals)+' PB'
     } else if (Math.floor(number).toString().length<22){
-        return (number/1000000000000000000).toPrecision(decimals)+' EB'
+        return (number/1e18).toPrecision(decimals)+' EB'
     } else if (Math.floor(number).toString().length<25){
-        return (number/1000000000000000000000).toPrecision(decimals)+' ZB'
+        return (number/1e21).toPrecision(decimals)+' ZB'
     } else if (Math.floor(number).toString().length<28){
-        return (number/1000000000000000000000000).toPrecision(decimals)+' YB'
+        return (number/1e24).toPrecision(decimals)+' YB'
     }
 }
+
 
 console.log(fromBytesToFormattedSizeUnits(-12145489451.5932, 5));
 
